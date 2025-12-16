@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Generator</title>
+
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+        }
+
+        /* Container card */
+        .container {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        
+        h2 {
+            color: #4f46e5;
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+
+        
+        input {
+            padding: 10px;
+            width: 220px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: 0.3s;
+            margin-bottom: 15px;
+        }
+
+        input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+        }
+
+        
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #4f46e5;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3b33c1;
+            transform: translateY(-2px);
+        }
+
+        
+        pre {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 16px;
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Table Generator</h2>
+
+        <input type="number" id="num" placeholder="Enter a number"><br>
+
+        <button onclick="generateTable()">Generate Table</button>
+
+        <pre id="result"></pre>
+    </div>
+
+    <script>
+        function generateTable() {
+            let number = Number(document.getElementById("num").value);
+            let output = "";
+
+            for (let i = 1; i <= 10; i++) {
+                output += number + " x " + i + " = " + (number * i) + "\n";
+            }
+
+            document.getElementById("result").innerText = output;
+        }
+    </script>
+
+</body>
+</html>
